@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" ?>
+<PsychoPy2experiment encoding="utf-8" version="2021.1.4">
+  <Settings>
+    <Param name="Audio latency priority" updates="None" val="use prefs" valType="str"/>
+    <Param name="Audio lib" updates="None" val="use prefs" valType="str"/>
+    <Param name="Completed URL" updates="None" val="" valType="str"/>
+    <Param name="Data file delimiter" updates="None" val="auto" valType="str"/>
+    <Param name="Data filename" updates="None" val="u'data/%s_%s_%s' % (expInfo['participant'], expName, expInfo['date'])" valType="code"/>
+    <Param name="Enable Escape" updates="None" val="True" valType="bool"/>
+    <Param name="Experiment info" updates="None" val="{'participant':'', 'session':'001'}" valType="code"/>
+    <Param name="Force stereo" updates="None" val="True" valType="bool"/>
+    <Param name="Full-screen window" updates="None" val="True" valType="bool"/>
+    <Param name="HTML path" updates="None" val="" valType="str"/>
+    <Param name="Incomplete URL" updates="None" val="" valType="str"/>
+    <Param name="Monitor" updates="None" val="testMonitor" valType="str"/>
+    <Param name="Resources" updates="None" val="[]" valType="fileList"/>
+    <Param name="Save csv file" updates="None" val="False" valType="bool"/>
+    <Param name="Save excel file" updates="None" val="False" valType="bool"/>
+    <Param name="Save log file" updates="None" val="True" valType="bool"/>
+    <Param name="Save psydat file" updates="None" val="True" valType="bool"/>
+    <Param name="Save wide csv file" updates="None" val="True" valType="bool"/>
+    <Param name="Screen" updates="None" val="1" valType="num"/>
+    <Param name="Show info dlg" updates="None" val="True" valType="bool"/>
+    <Param name="Show mouse" updates="None" val="False" valType="bool"/>
+    <Param name="Units" updates="None" val="height" valType="str"/>
+    <Param name="Use version" updates="None" val="" valType="str"/>
+    <Param name="Window size (pixels)" updates="None" val="(1024, 768)" valType="code"/>
+    <Param name="blendMode" updates="None" val="avg" valType="str"/>
+    <Param name="color" updates="None" val="$[0,0,0]" valType="str"/>
+    <Param name="colorSpace" updates="None" val="rgb" valType="str"/>
+    <Param name="expName" updates="None" val="demo_eye_tracking" valType="str"/>
+    <Param name="exportHTML" updates="None" val="on Sync" valType="str"/>
+    <Param name="logging level" updates="None" val="exp" valType="code"/>
+  </Settings>
+  <Routines>
+    <Routine name="loading_trial">
+      <CodeComponent name="configuration_code">
+        <Param name="Before Experiment" updates="constant" val="ale" valType="extendedCode"/>
+        <Param name="Before JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="// Download the webgazer library and re-download seedrandom.js (since webgazer&amp;#10;// overrides it with a version that conflicts with PsychoJS)&amp;#10;psychoJS.downloadResources([&amp;#10;  { name: 'webgazer.js', path: 'js/webgazer-2.0.1.tp.js' },&amp;#10;  { name: 'seedrandom.js', path: 'https://cdnjs.cloudflare.com/ajax/libs/seedrandom/3.0.1/seedrandom.min.js' }&amp;#10;]);&amp;#10;// Initialize x and y arrays; we use these to calculate running averages of &amp;#10;// current gaze position; the longer the window, the slower, but more fluent&amp;#10;// the updates&amp;#10;let averagingWindow = 10;&amp;#10;window.xGazes = new Array(averagingWindow ).fill(0);&amp;#10;window.yGazes = new Array(averagingWindow ).fill(0);&amp;#10;// Timestamp for last time eyes exited validation box&amp;#10;window.eyesExitedTimestamp= (new Date).getTime();&amp;#10;// No. of ms to keep webcam thumbnail visible after eyes returned into validation box&amp;#10;window.eyesReturnedDelay = 3000;&amp;#10;// DEBUG&amp;#10;window.psychoJS = psychoJS;" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="JS" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="// Continue once the webgazer global is available&amp;#10;continueRoutine = !window.hasOwnProperty('webgazer');" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="configuration_code" valType="code"/>
+      </CodeComponent>
+      <TextComponent name="loading_text">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="contrast" updates="constant" val="1" valType="num"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
+        <Param name="name" updates="None" val="loading_text" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="text" updates="constant" val="Downloading additional resources. &amp;#10;&amp;#10;One moment please..." valType="extendedStr"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+    </Routine>
+    <Routine name="webcam_trial">
+      <TextComponent name="intro_text">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="contrast" updates="constant" val="1" valType="num"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.04" valType="code"/>
+        <Param name="name" updates="None" val="intro_text" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="text" updates="constant" val="demo_eye_tracking: starting webcam&amp;#10;&amp;#10;This experiment demonstrates eye tracking via the webgazer library. &amp;#10;&amp;#10;You should see your web-browser request access to your webcam. You might need to click on this text to make that happen. Please permit access, and wait a little while. Your webcam video should appear in the top-left of the screen." valType="extendedStr"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <CodeComponent name="start_webgazer">
+        <Param name="Before Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Before JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="// Show webcam thumbnail and face feedback box, but not face overlay and gaze dot&amp;#10;window.webgazer.params.showVideoPreview = true;&amp;#10;window.webgazer.params.showFaceFeedbackBox = true;&amp;#10;window.webgazer.params.showFaceOverlay = false;&amp;#10;window.webgazer.params.showGazeDot = false&amp;#10;// Start eye tracking&amp;#10;window.webgazer&amp;#10;    // Called on each eye tracking update&amp;#10;    .setGazeListener(function(data, clock) {&amp;#10;      if (data !== null) {&amp;#10;        // Remove first element from gazes array, add current gaze at the end&amp;#10;        window.xGazes.shift();&amp;#10;        window.xGazes.push(data.x);&amp;#10;        window.yGazes.shift();&amp;#10;        window.yGazes.push(data.y);&amp;#10;       }&amp;#10;    })&amp;#10;    .begin();&amp;#10;    //.showPredictionPoints(true); &amp;#10;" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="JS" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="// Finish routine once everything is ready&amp;#10;continueRoutine = &amp;#10;  !window.webgazer.isReady() || &amp;#10;  document.getElementById('webgazerFaceFeedbackBox') === null ||&amp;#10;  document.getElementById('webgazerVideoFeed') === null;" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="start_webgazer" valType="code"/>
+      </CodeComponent>
+    </Routine>
+    <Routine name="intro_calibatrion_trial">
+      <TextComponent name="calibration_text">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="contrast" updates="constant" val="1" valType="num"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.04" valType="code"/>
+        <Param name="name" updates="None" val="calibration_text" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="text" updates="constant" val="demo_eye_tracking: calibration&amp;#10;&amp;#10;Now we'll calibrate the eye tracker. Please try to keep your head still and within the rectangle you see in your webcam video. When you do so, the rectangle turns green.&amp;#10;&amp;#10;In the next part of this experiment, the webcam video disappears. It will reappear when your head is too from the rectangle. If this happens, please move back into view. White squares appears at different locations on the screen. Please click each square with your mouse.&amp;#10;&amp;#10;Click anywhere to continue..." valType="extendedStr"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <MouseComponent name="mouse_2">
+        <Param name="clickable" updates="constant" val="" valType="code"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutineOnPress" updates="constant" val="any click" valType="str"/>
+        <Param name="name" updates="None" val="mouse_2" valType="code"/>
+        <Param name="newClicksOnly" updates="constant" val="True" valType="bool"/>
+        <Param name="saveMouseState" updates="None" val="final" valType="str"/>
+        <Param name="saveParamsClickable" updates="constant" val="name," valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="False" valType="bool"/>
+        <Param name="timeRelativeTo" updates="constant" val="mouse onset" valType="str"/>
+      </MouseComponent>
+    </Routine>
+    <Routine name="calibration_trial">
+      <PolygonComponent name="calibration_square">
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="contrast" updates="constant" val="1" valType="num"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="fillColor" updates="constant" val="$[1,1,1]" valType="str"/>
+        <Param name="fillColorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="interpolate" updates="constant" val="linear" valType="str"/>
+        <Param name="lineColor" updates="constant" val="$[1,1,1]" valType="str"/>
+        <Param name="lineColorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="lineWidth" updates="constant" val="0" valType="code"/>
+        <Param name="nVertices" updates="constant" val="4" valType="int"/>
+        <Param name="name" updates="None" val="calibration_square" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="shape" updates="constant" val="rectangle" valType="str"/>
+        <Param name="size" updates="constant" val="(0.02, 0.02)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+      </PolygonComponent>
+      <MouseComponent name="mouse_3">
+        <Param name="clickable" updates="constant" val="calibration_square" valType="code"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutineOnPress" updates="constant" val="valid click" valType="str"/>
+        <Param name="name" updates="None" val="mouse_3" valType="code"/>
+        <Param name="newClicksOnly" updates="constant" val="True" valType="bool"/>
+        <Param name="saveMouseState" updates="None" val="final" valType="str"/>
+        <Param name="saveParamsClickable" updates="constant" val="name," valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="False" valType="bool"/>
+        <Param name="timeRelativeTo" updates="constant" val="mouse onset" valType="str"/>
+      </MouseComponent>
+      <CodeComponent name="calibration_code">
+        <Param name="Before Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Before JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="// Position calibration_square using width and height of window&amp;#10;var canvas = psychoJS.window.size;&amp;#10;var scaling = [&amp;#10;  canvas[0] &lt;= canvas[1]? 1: canvas[0] / canvas[1],&amp;#10;  canvas[1] &lt;= canvas[0]? 1: canvas[1] / canvas[0]&amp;#10;];&amp;#10;var newPos = [&amp;#10;    calibration_x * scaling[0],&amp;#10;    calibration_y * scaling[1]&amp;#10;];&amp;#10;console.log(newPos);&amp;#10;calibration_square.setPos(newPos);" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="JS" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="// Hide webcam thumbnail if eyes are in validation box&amp;#10;if (webgazer.checkEyesInValidationBox() === true) {&amp;#10;  // If last time that eyes were outside of validation box was longer than &amp;#10;  // window.eyesReturnedDelay ago, hide thumbnail&amp;#10;  if (&amp;#10;    document.getElementById('webgazerFaceFeedbackBox').style.display != 'none' &amp;&amp;&amp;#10;    (new Date).getTime() &gt; window.eyesExitedTimestamp + window.eyesReturnedDelay&amp;#10;  ) {   &amp;#10;    document.getElementById('webgazerFaceFeedbackBox').style.display = 'none';&amp;#10;    document.getElementById('webgazerVideoFeed').style.display = 'none';&amp;#10;  }&amp;#10;} else {&amp;#10;    // Eyes outside of validation box; show thumbnail&amp;#10;    window.eyesExitedTimestamp = (new Date).getTime();&amp;#10;    document.getElementById('webgazerFaceFeedbackBox').style.display = 'block';&amp;#10;    document.getElementById('webgazerVideoFeed').style.display = 'block';&amp;#10;}&amp;#10;" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="calibration_code" valType="code"/>
+      </CodeComponent>
+    </Routine>
+    <Routine name="tracking_trial">
+      <PolygonComponent name="tracking_square">
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="contrast" updates="constant" val="1" valType="num"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="fillColor" updates="constant" val="$[-1,-1,-1]" valType="str"/>
+        <Param name="fillColorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="interpolate" updates="constant" val="linear" valType="str"/>
+        <Param name="lineColor" updates="constant" val="$[1,1,1]" valType="str"/>
+        <Param name="lineColorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="lineWidth" updates="constant" val="" valType="code"/>
+        <Param name="nVertices" updates="constant" val="4" valType="int"/>
+        <Param name="name" updates="None" val="tracking_square" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="shape" updates="constant" val="rectangle" valType="str"/>
+        <Param name="size" updates="constant" val="(0.02, 0.02)" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+      </PolygonComponent>
+      <CodeComponent name="tracking_code">
+        <Param name="Before Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Before JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="// Remove the click tracker used for calibration&amp;#10;window.webgazer.removeMouseEventListeners();" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="JS" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="// Hide webcam thumbnail if eyes are in validation box&amp;#10;if (webgazer.checkEyesInValidationBox() === true) {&amp;#10;  // If last time that eyes were outside of validation box was longer than &amp;#10;  // window.eyesReturnedDelay ago, hide thumbnail&amp;#10;  if (&amp;#10;    document.getElementById('webgazerFaceFeedbackBox').style.display != 'none' &amp;&amp;&amp;#10;    (new Date).getTime() &gt; window.eyesExitedTimestamp + window.eyesReturnedDelay&amp;#10;  ) {   &amp;#10;    document.getElementById('webgazerFaceFeedbackBox').style.display = 'none';&amp;#10;    document.getElementById('webgazerVideoFeed').style.display = 'none';&amp;#10;  }&amp;#10;} else {&amp;#10;    // Eyes outside of validation box; show thumbnail&amp;#10;    window.eyesExitedTimestamp = (new Date).getTime();&amp;#10;    document.getElementById('webgazerFaceFeedbackBox').style.display = 'block';&amp;#10;    document.getElementById('webgazerVideoFeed').style.display = 'block';&amp;#10;}&amp;#10;// Update tracking square to the average of last n gazes&amp;#10;let x = util.sum(window.xGazes) / window.xGazes.length;&amp;#10;let y = util.sum(window.yGazes) / window.yGazes.length;&amp;#10;// Set tracking square to x and y, transformed to height units&amp;#10;tracking_square.setPos(&amp;#10;  util.to_height(&amp;#10;    [&amp;#10;      x - psychoJS.window.size[0] / 2,&amp;#10;      -1 * (y - psychoJS.window.size[1] / 2)&amp;#10;    ], &amp;#10;    'pix', &amp;#10;    psychoJS.window&amp;#10;  )&amp;#10;);&amp;#10;" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="tracking_code" valType="code"/>
+      </CodeComponent>
+    </Routine>
+  </Routines>
+  <Flow>
+    <Routine name="loading_trial"/>
+    <Routine name="webcam_trial"/>
+    <Routine name="intro_calibatrion_trial"/>
+    <LoopInitiator loopType="TrialHandler" name="trials">
+      <Param name="Selected rows" updates="None" val="" valType="str"/>
+      <Param name="conditions" updates="None" val="[OrderedDict([('calibration_x', -0.44), ('calibration_y', -0.44)]), OrderedDict([('calibration_x', -0.44), ('calibration_y', -0.22)]), OrderedDict([('calibration_x', -0.44), ('calibration_y', 0.0)]), OrderedDict([('calibration_x', -0.44), ('calibration_y', 0.22)]), OrderedDict([('calibration_x', -0.44), ('calibration_y', 0.44)]), OrderedDict([('calibration_x', -0.22), ('calibration_y', -0.44)]), OrderedDict([('calibration_x', -0.22), ('calibration_y', -0.22)]), OrderedDict([('calibration_x', -0.22), ('calibration_y', 0.0)]), OrderedDict([('calibration_x', -0.22), ('calibration_y', 0.22)]), OrderedDict([('calibration_x', -0.22), ('calibration_y', 0.44)]), OrderedDict([('calibration_x', 0.0), ('calibration_y', -0.44)]), OrderedDict([('calibration_x', 0.0), ('calibration_y', -0.22)]), OrderedDict([('calibration_x', 0.0), ('calibration_y', 0.0)]), OrderedDict([('calibration_x', 0.0), ('calibration_y', 0.22)]), OrderedDict([('calibration_x', 0.0), ('calibration_y', 0.44)]), OrderedDict([('calibration_x', 0.22), ('calibration_y', -0.44)]), OrderedDict([('calibration_x', 0.22), ('calibration_y', -0.22)]), OrderedDict([('calibration_x', 0.22), ('calibration_y', 0.0)]), OrderedDict([('calibration_x', 0.22), ('calibration_y', 0.22)]), OrderedDict([('calibration_x', 0.22), ('calibration_y', 0.44)]), OrderedDict([('calibration_x', 0.44), ('calibration_y', -0.44)]), OrderedDict([('calibration_x', 0.44), ('calibration_y', -0.22)]), OrderedDict([('calibration_x', 0.44), ('calibration_y', 0.0)]), OrderedDict([('calibration_x', 0.44), ('calibration_y', 0.22)]), OrderedDict([('calibration_x', 0.44), ('calibration_y', 0.44)])]" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="calibration_trials.xlsx" valType="str"/>
+      <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
+      <Param name="isTrials" updates="None" val="True" valType="bool"/>
+      <Param name="loopType" updates="None" val="random" valType="str"/>
+      <Param name="nReps" updates="None" val="1" valType="code"/>
+      <Param name="name" updates="None" val="trials" valType="code"/>
+      <Param name="random seed" updates="None" val="" valType="code"/>
+    </LoopInitiator>
+    <Routine name="calibration_trial"/>
+    <LoopTerminator name="trials"/>
+    <Routine name="tracking_trial"/>
+  </Flow>
+</PsychoPy2experiment>
